@@ -4,6 +4,8 @@ class Expense:
         self.price = price
         self.Discription = Discription
 
+    def     
+
     
        
 #The Expence Calculater app which Calculate the expences and show your all expences 
@@ -11,7 +13,7 @@ print("Welcome to Expence Collector")
 while True :
     price = int(input("Entre the price "))
     Discription = (input("Discribe your ecpences"))
-    expenses.append(price,Discription)
+    
 
 
 
