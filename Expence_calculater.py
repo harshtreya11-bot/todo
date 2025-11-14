@@ -1,57 +1,75 @@
-class Expense:
-    expenses = []
-    def Expences_data_holder(self,price,Discription):
-        self.price = price
-        self.Discription = Discription
-
-    def     
-
-    
-       
-#The Expence Calculater app which Calculate the expences and show your all expences 
-print("Welcome to Expence Collector")
-while True :
-    price = int(input("Entre the price "))
-    Discription = (input("Discribe your ecpences"))
-    
-
-
-
-# class Expense:
-#     expenses = []
-
-#     def __init__(self, price, description):
-#         self.price = price
-#         self.description = description
-
-#     @classmethod
-#     def add_expense(cls, price, description):
-#         cls.expenses.append(Expense(price, description))
-
-#     @classmethod
-#     def show_expenses(cls):
-#         print("\nAll Expenses:")
-#         for i, exp in enumerate(cls.expenses, start=1):
-#             print(f"{i}. Price: {exp.price}, Description: {exp.description}")
-
-# print("Welcome to Expense Collector")
-
-# while True:
-#     try:
-#         price = int(input("Enter the price: "))
-#         description = input("Describe your expense: ")
-#         Expense.add_expense(price, description)
-#         more = input("Add another expense? (yes/no): ").lower()
-#         if more != 'yes':
-#             break
-#     except ValueError:
-#         print("Invalid price. Please enter a number.")
-
-# Expense.show_expenses()
-
-
+#First we will a List with the name Expense
+Expense = []
+#then we define a fuunction to add expenses properties which we will take input from user 
+def expenses_tracker():
+    Expense_price = input("Entre the  Expense Price :")
+    Expense_Discription = input("Discribe your Expense  :")
+    serial = len(Expense)+1
+    Expense.append({"Sr.No": serial ,"Expense Price : ": Expense_price, "Expense Discription :" : Expense_Discription })
+    print("Expenses add Successfully")#we append the the all assin value in the list 
     
     
+
+
+def add_more_Expenses(): #to add more expense in the list we ddd this function
+    
+        y =str(input("Add more Expense? yes?/no :")).lower()
+        if  y == "yes": #if the input from user is yes then it break else it again return to expences_tracker
+            expenses_tracker()      
+        else:
+            print("Tankyou for choosing this app")  
+            breakpoint      
+           
+  
+
+def view_expenses():
+    print(Expense)   
+
+def delete_expenses():
+     expense_no = int(input("Entre the expense serial no you want ro delete"))
+     for idx,Expense in enumerate(Expense):
+        if Expense["Sr.No"] == expense_no:
+            Expense.pop(idx)
+            print("Expense Deleted Successfully")
+            break
+# def delete_all_task():
+#     expense    
+    
+
+#Expense tracker Entry
+print('___________________________________Welcome to Expense tracker__________________________________')
+print("1. For enter the epenses press 1 :")
+print("2. for View the expenses press 2 :")
+print("3. for delete the expenss press 3 :")
+print("5. Press the 4 for delete all Expenses: ")
+print("5. press 5 for exit :")
+
+x = int(input("Entre the task you want to perform :"))    #here we define the funtion to entre the value from user
+
+
+while True:
+    if x==1:
+        print("Enter your Expense" )
+        expenses_tracker()
+        add_more_Expenses()
+    elif x==2:
+        print("View your Expenses")
+        view_expenses()    
+    elif x==3 :
+        print("Delete the Expenses")
+        delete_expenses()
+    elif x==4:
+        print("Thankyou for chooshing this app")    
+        break
+
+
+
+    
+
+
+
+
+
 
     
 
