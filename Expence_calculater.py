@@ -5,15 +5,15 @@ Expense = []
 def load_expense():
     result = None
     try:
-        with open("Expense.json","w") as f:
-            result = json.load(f)
+        with open("Expense.json","r") as E:
+            result = json.load(E)
     except:
             result=[]    
 
     return  result   
 def update_file():
-    with open("Expense.json","w") as f:
-        json.dump(Expense,f)   
+    with open("Expense.json","w") as E:
+        json.dump(Expense,E)   
 # then we define a fuunction to add expenses properties which we will take input from user
 def expenses_tracker():
     Expense_price = input("Entre the  Expense Price :")
@@ -67,14 +67,15 @@ while True:
     if x == 1:
         print("Enter your Expense")
         expenses_tracker()
+        update_file()
         # add_more_Expenses()
     elif x == 2:
         print("View your Expenses")
         view_expenses()
-
     elif x == 3:
         print("Delete the Expenses")
         delete_expenses()
+        update_file()
     elif x == 4:
         print("Thankyou for chooshing this app")
         break
