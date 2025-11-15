@@ -27,7 +27,7 @@ def create_task():
 
 
 def delete_task():
-    task_id = (input("Entre Task id"),)
+    task_id = int(input("Entre Task id"))
     for idx, todo in enumerate(todos):
         if todo["id"] == task_id:
             todos.pop(idx)
@@ -36,7 +36,7 @@ def delete_task():
 
 
 def mark_as_completed():
-    task_id = input("Entre Task id")
+    task_id = int(input("Entre Task id"))
     for todo in todos:
         if todo["id"] == task_id:
             todo["is_completed"] = True
