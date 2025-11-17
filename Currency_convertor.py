@@ -17,13 +17,13 @@ def INR_to_JPY(JPY_val):
     INR_val = JPY_val/1.74
     print(JPY_val,"JPY is equal to :",INR_val,"INR") 
 def JPY_to_INR(INR_val):
-    JPY_val = INR_val/1.74
+    JPY_val = INR_val*1.74
     print(INR_val,"INR is equal to :",JPY_val,"JPY") 
 def INR_to_AED(INR_val):
-    AED_val = INR_val*0.097
+    AED_val = INR_val*0.041
     print(INR_val,"INR is equal to :",AED_val,"AED") 
 def AED_to_INR(AED_val):
-    INR_val = AED_val*0.097
+    INR_val = AED_val/0.041
     print(AED_val,"AED is equal to :",INR_val,"INR") 
 while True:
     print("____________________________________Welcome to Currency Converter_________________________________________________________________")
@@ -58,7 +58,7 @@ while True:
     elif x==5:
         print("____________________________________________Welcome to INR to JPY Converter________________________________________________")
         y= int(input("Entre the amount you want to change:"))
-        INR_to_JPY(y)
+        JPY_to_INR(y)
 
     elif x==6:
         print("____________________________________________Welcome to JPY to INR Converter________________________________________________")
@@ -68,11 +68,11 @@ while True:
     elif x==7:
         print("____________________________________________Welcome to INR to AED Converter________________________________________________")
         y= int(input("Entre the amount you want to change:"))
-
+        INR_to_AED(y)
     elif x==8:
         print("____________________________________________Welcome to AED to INR Converter________________________________________________")
         y= int(input("Entre the amount you want to change:"))
-
+        AED_to_INR(y)
     elif x==9:
         print("____________________________________________Thanyou for choosing this app :)________________________________________________")  
         break
