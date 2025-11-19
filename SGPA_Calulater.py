@@ -12,7 +12,20 @@ credits = {
         "caeg": 1.5,
         "sports": 0.5,
     },
-}
+    "sem2": {
+        "human_values": 2,
+        "human_values_activities_&_ports": 1,
+        "engineering_mathematics_II": 4,
+        "engineering_physics":  4,
+        "engineering_physics_lab": 1,
+        "programming_for_problem_solving": 2,
+        "basic_civil_engineering": 2,
+        "computer_programming_lab": 1.5,
+        "basic_civil_engineering_lab": 1,
+        "computer_aided_machine_drawing": 1.5,
+        "sports": 0.5
+     }
+}  
 
 
 def getCgpa(grade):
@@ -90,6 +103,36 @@ def first_sem_SGPA():
 
     print("SGPA:", sgpa)
 
+def second_sem_SGPA():
+    human_values = getCgpa(input("Enter the grade of Human Value :"))
+    human_values_activities_ports = getCgpa(input("Enter the grade of Human Values Activities & Sports :"))
+    engineering_mathematics = getCgpa(input("Enter the grade of Engineering Mathematics-II :"))
+    engineering_physics = getCgpa(input("Enter the grade of Engineering Physics :"))
+    engineering_physics_lab = getCgpa(input("Enter the grade of Engineering Physics Lab :"))
+    programming_for_problem_solving = getCgpa(input("Enter the grade of Programming For Problem Solving :"))
+    basic_civil_engineering = getCgpa(input("Enter the grade of Basic Civil Engineering :"))
+    computer_programming_lab = getCgpa(input("Enter the grade of Computer Programming Lab :"))
+    basic_civil_engineering_lab = getCgpa(input("Enter the grade of Basic Civil Engineering Lab :"))
+    computer_aided_machine_drawing = getCgpa(input("Enter the grade of Computer Aided Machine Drawing :"))
+    sports = getCgpa(input("Enter the grade of Sports :"))
+
+    sgpaq = calculate_sgpa( 
+        [ human_values,
+          human_values_activities_ports,
+          engineering_mathematics,
+          engineering_physics,
+          engineering_physics_lab,
+          programming_for_problem_solving,
+          basic_civil_engineering,
+          computer_programming_lab,
+          basic_civil_engineering_lab,
+          computer_aided_machine_drawing,
+          sports,
+        ],
+        list(credits["sem2"].values()),
+    )
+    print("SGPA:", sgpaq)
+
 
 while True:
     print("Welcome to SGPA Calculater")
@@ -99,5 +142,8 @@ while True:
     if x == 1:
         print("Welcome to 1sem SGPA calculator")
         first_sem_SGPA()
-    if x == 2:
+    elif x == 2:
         print("Welcome to 2nd Sem SGPA calculator")
+        second_sem_SGPA()
+    else:
+        print("Ooooops you enter wrong value try again :(")    
