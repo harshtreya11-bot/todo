@@ -1,6 +1,3 @@
- 
-
-
 def INR_to_USD(USD_val):
     INR_val = USD_val*88.69
     print(USD_val,"USD is equal to :",INR_val,"INR")
